@@ -6,6 +6,6 @@ package «lean4-example» {
 }
 
 @[default_target]
-lean_lib «Lean4Example» {
+lean_lib «Lean4Example2» {
   -- add library configuration options here
 }
