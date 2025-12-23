@@ -57,5 +57,5 @@ induction n with | zero => simp | succ n hn =>
   simp only [Nat.cast_succ, pow_succ, mul_add, mul_one, Nat.cast_zero, add_zero, mul_comm] at hn ⊢
   nlinarith [sq_nonneg (y - 1)]
 
- theorem problem_542224 {α : Type*} [TopologicalSpace α] (x : α) :
+ theorem problem_542225 {α : Type*} [TopologicalSpace α] (x : α) :
    MyIsConnected ({x} : Set α) := by sorry  
