@@ -49,5 +49,11 @@ theorem problem_542224 {α : Type*} [TopologicalSpace α] (x : α) :
   have h_main : MyIsConnected ({x} : Set α) := by
     exact ⟨h_nonempty, h_preconnected⟩
 
-theorem problem_542224 {α : Type*} [TopologicalSpace α] (x : α) :
- MyIsConnected ({x} : Set α) := by sorry  
+open BigOperators Real Nat Topology Rat  /- Prove $y^{n}-1\geqslant n(y-1)$ for $y>0$. -/
+theorem lean_workbook_10373 (y : ℝ) (n : ℕ) (hy : y > 0) : y ^ n - 1 ≥ n * (y - 1) := by
+induction n with | zero => simp | succ n hn =>
+  simp only [Nat.cast_succ, pow_succ, mul_add, mul_one, Nat.cast_zero, add_zero, mul_comm] at hn ⊢
+  nlinarith [sq_nonneg (y - 1)]
+
+ theorem problem_542224 {α : Type*} [TopologicalSpace α] (x : α) :
+   MyIsConnected ({x} : Set α) := by sorry  
